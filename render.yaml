@@ -1,10 +1,10 @@
 services:
   - type: web
     name: brain-arvr-app
-    env: python
-    buildCommand: "pip install -r requirements.txt"
+    runtime: python
+    buildCommand: "pip install --upgrade pip setuptools wheel && pip install -r requirements.txt"
     startCommand: "python start.py"
     plan: free
-    envVars:
+    env:
       - key: PYTHON_VERSION
-        value: 3.11.0 
+        value: "3.10.11" 
